@@ -1,0 +1,109 @@
+vgabios (0.4c+20040829-3) unstable; urgency=low
+
+  * Orphaned.
+    - control.in (Maintainer): Set to Debian QA group.
+
+ -- Robert Millan <rmh@debian.org>  Wed, 13 Oct 2004 20:55:58 +0200
+
+vgabios (0.4c+20040829-2) unstable; urgency=low
+
+  * control (Conflicts): Add bochs (<< 2.1.1+20040903-1).
+
+ -- Robert Millan <rmh@debian.org>  Fri,  3 Sep 2004 11:31:06 +0200
+
+vgabios (0.4c+20040829-1) experimental; urgency=low
+
+  * New upstream snapshot.
+    - Adds totaly undocumented "-DCIRRUS" build.  Whatever it is, it must be
+      cool so we install it in debian/rules.
+    - Uploading to experimental.  This version of vgabios works for Qemu but
+      breaks with Bochs.
+  * control (Description):  Nuke references to Plex86, and add some to Qemu.
+  * rules:  Nuke "_CPU = i386" check (this should now build on all cpus).
+    - README.Debian:  Kill.
+    - rules: Stop installing lintian override file.
+    - overrides: Nuke.
+
+ -- Robert Millan <rmh@debian.org>  Mon, 30 Aug 2004 19:09:41 +0200
+
+vgabios (0.4b-1) unstable; urgency=low
+
+  * New upstream release.
+  * Switch to CDBS.
+    - control: Add cdbs, set debhelper to (>= 4.1.0).
+    - rules: Rewrite.
+
+ -- Robert Millan <rmh@debian.org>  Wed,  5 Nov 2003 12:39:36 +0100
+
+vgabios (0.4a-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Robert Millan <rmh@debian.org>  Thu, 21 Aug 2003 02:54:43 +0000
+
+vgabios (0.3a+20030324-1) unstable; urgency=low
+
+  * First upload as a developer.
+  * New upstream snapshot.
+  * Removed tools86.c, which is not needed anymore.
+  * Updated upstream URL in debian/copyright.
+
+ -- Robert Millan <rmh@debian.org>  Mon, 24 Mar 2003 18:17:45 +0000
+
+vgabios (0.3a-2) unstable; urgency=low
+
+  * Reworked i386 check to be kernel-independant.
+  * Ported tools86.c to the Hurd, forwarding patch to dosemu.
+  * Fixed the #asm / #endasm problem as explained in the mailing list.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Tue, 16 Apr 2002 17:29:50 +0200
+
+vgabios (0.3a-1) unstable; urgency=low
+
+  * New upstream release
+  * Added Jeroen Janssen <japj@darius.demon.nl> to author list.
+  * Missing awk in Build-Depends was added.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Wed, 20 Mar 2002 00:11:45 +0100
+
+vgabios (0.2b-2) unstable; urgency=low
+
+  * Deactivated unnecessary dh_shlibdeps.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Mon,  4 Mar 2002 15:18:25 +0100
+
+vgabios (0.2b-1) unstable; urgency=low
+
+  * New upstream release
+  * Unset execution bit from vgabios.bin.
+  * Lintian overrides build-depends-without-arch-dep, see README.Debian.
+  * Set bash as interpreter of dataseghack to support upstream's bashisms.
+  * Bulding an extra image with debugging support.
+  * C shell no longer needed, got rid of it.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Fri, 22 Feb 2002 12:59:59 +0100
+
+vgabios (0.2a-2) unstable; urgency=low
+
+  * Fixed a typo in debian/control. (Closes: #125457)
+  * Moved vgabios.bin to /usr/share/vgabios/vgabios.bin.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Tue, 18 Dec 2001 22:58:30 +0100
+
+vgabios (0.2a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed blank line in debian/control (Closes: #113976)
+  * Documented reason not to build for non-i386 archs. Look at README.Debian.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Sun, 11 Nov 2001 20:45:31 +0100
+
+vgabios (0.01a-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Robert Millan <zeratul2@wanadoo.es>  Sat,  1 Sep 2001 17:01:45 +0200
+
+Local variables:
+mode: debian-changelog
+End:

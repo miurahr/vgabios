@@ -1,0 +1,19 @@
+This package was debianized by Robert Millan <rmh@debian.org> on
+Sat,  1 Sep 2001 17:01:45 +0200.
+
+It was downloaded from http://www.nongnu.org/vgabios/
+
+Upstream Authors: Christophe Bothamy <cbothamy@free.fr>  and others
+
+Acknowledgements:
+
+The source code contains code from rombios.c of plex86 (c) by Kevin Lawton
+
+The source code contains fonts from fntcol16.zip (c) by Joseph Gil
+
+Copyright:
+
+You are free to distribute this software under the terms of
+the GNU Lesser General Public License.
+On Debian systems, the complete text of the GNU Lesser General Public
+License can be found in /usr/share/common-licenses/LGPL file.

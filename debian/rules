@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+DEB_TAR_SRCDIR := vgabios
+DEB_AUTO_UPDATE_DEBIAN_CONTROL := yes
+
+binary/vgabios:: common-install-prehook-arch
+	mkdir -p debian/vgabios/usr/share/vgabios
+	for i in "" .debug .cirrus .cirrus.debug ; do \
+		install -m644 $(DEB_SRCDIR)/VGABIOS-lgpl-latest$$i.bin \
+		debian/vgabios/usr/share/vgabios/vgabios$$i.bin ; \
+	done
+
+include /usr/share/cdbs/1/class/makefile.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/tarball.mk
