@@ -1,3 +1,10 @@
+vgabios (0.5a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Do not use a build-stamp file.
+
+ -- Guillem Jover <guillem@debian.org>  Mon,  4 Apr 2005 01:35:02 +0300
+
 vgabios (0.4c+20041014-1) unstable; urgency=low
 
   * New Maintainer. (Closes: #276391)
