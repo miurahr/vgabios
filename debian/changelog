@@ -1,3 +1,19 @@
+vgabios (0.4c+20041014-1) unstable; urgency=low
+
+  * New Maintainer. (Closes: #276391)
+  * New upstream snapshot.
+    - Remove CVS dirs.
+    - Not tar in tar anymore.
+  * Clean debian/copyright.
+  * Reworded package long description.
+  * Removed emacs cruft from changelog.
+  * Do not create the lintian overrides dir.
+  * Remove the binary rom files on clean.
+  * Switch back to plain debhelper.
+  * Now using Standards-Version 3.6.1.
+
+ -- Guillem Jover <guillem@debian.org>  Thu, 14 Oct 2004 23:11:19 +0200
+
 vgabios (0.4c+20040829-3) unstable; urgency=low
 
   * Orphaned.
@@ -104,6 +120,3 @@ vgabios (0.01a-1) unstable; urgency=low
 
  -- Robert Millan <zeratul2@wanadoo.es>  Sat,  1 Sep 2001 17:01:45 +0200
 
-Local variables:
-mode: debian-changelog
-End:

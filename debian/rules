@@ -1,15 +1,70 @@
 #!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
 
-DEB_TAR_SRCDIR := vgabios
-DEB_AUTO_UPDATE_DEBIAN_CONTROL := yes
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
-binary/vgabios:: common-install-prehook-arch
-	mkdir -p debian/vgabios/usr/share/vgabios
+build: build-stamp
+build-stamp:
+	dh_testdir
+	
+	$(MAKE)
+	
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	
+	rm -f build-stamp
+	
+	$(MAKE) clean
+	rm -f VGABIOS-*.bin
+	
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	
 	for i in "" .debug .cirrus .cirrus.debug ; do \
-		install -m644 $(DEB_SRCDIR)/VGABIOS-lgpl-latest$$i.bin \
+		install -m644 $(CURDIR)/VGABIOS-lgpl-latest$$i.bin \
 		debian/vgabios/usr/share/vgabios/vgabios$$i.bin ; \
 	done
 
-include /usr/share/cdbs/1/class/makefile.mk
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/tarball.mk
+binary-indep: build install
+# Nothing to do.
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+#	dh_installdebconf
+	dh_installdocs
+#	dh_installexamples
+#	dh_install
+#	dh_installmenu
+#	dh_installlogrotate
+#	dh_installmime
+#	dh_installinit
+#	dh_installman
+#	dh_installinfo
+	dh_installchangelogs ChangeLog
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_makeshlibs
+	dh_installdeb
+#	dh_perl
+#	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install
+
