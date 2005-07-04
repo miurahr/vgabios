@@ -1,3 +1,11 @@
+vgabios (0.5b-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update watch file URL and increase version number to 3.
+  * Now using Standards-Version 3.6.2 (no changes needed).
+
+ -- Guillem Jover <guillem@debian.org>  Tue,  5 Jul 2005 01:21:45 +0300
+
 vgabios (0.5a-1) unstable; urgency=low
 
   * New upstream release.
