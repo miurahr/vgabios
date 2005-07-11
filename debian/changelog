@@ -1,3 +1,9 @@
+vgabios (0.5c-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guillem Jover <guillem@debian.org>  Mon, 11 Jul 2005 11:39:45 +0300
+
 vgabios (0.5b-1) unstable; urgency=low
 
   * New upstream release.
