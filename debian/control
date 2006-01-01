@@ -2,7 +2,7 @@ Source: vgabios
 Section: misc
 Priority: extra
 Maintainer: Guillem Jover <guillem@debian.org>
-Build-Depends-Indep: debhelper (>= 4.1.0), bcc, bin86, gawk | awk
+Build-Depends-Indep: debhelper (>= 5), bcc, bin86, gawk | awk
 Standards-Version: 3.6.2
 
 Package: vgabios
