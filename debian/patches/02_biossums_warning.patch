@@ -1,0 +1,12 @@
+Index: biossums.c
+===================================================================
+--- biossums.c.orig	2007-07-17 06:09:22.000000000 +0300
++++ biossums.c	2007-07-17 06:09:27.000000000 +0300
+@@ -17,6 +17,7 @@
+  */
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ 
+ typedef unsigned char byte;
+ 

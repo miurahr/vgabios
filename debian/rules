@@ -1,13 +1,10 @@
 #!/usr/bin/make -f
 # Copyright (C) 1997-1999 Joey Hess <joeyh@debian.org>
-# Copyright (C) 2004-2006 Guillem Jover <guillem@debian.org>
+# Copyright (C) 2004-2007 Guillem Jover <guillem@debian.org>
 
-build:
-	dh_testdir
-	
-	$(MAKE)
+include /usr/share/quilt/quilt.make
 
-clean:
+clean: unpatch
 	dh_testdir
 	dh_testroot
 	
@@ -16,7 +13,17 @@ clean:
 	
 	dh_clean
 
-install: build
+build-indep: patch
+	dh_testdir
+	
+	$(MAKE)
+
+build-arch:
+# Nothing to do.
+
+build: build-indep build-arch
+
+install: build-indep
 	dh_testdir
 	dh_testroot
 	dh_clean -k
@@ -27,10 +34,7 @@ install: build
 		debian/vgabios/usr/share/vgabios/vgabios$$i.bin ; \
 	done
 
-binary-indep: build install
-# Nothing to do.
-
-binary-arch: build install
+binary-indep: install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
@@ -44,7 +48,11 @@ binary-arch: build install
 	dh_md5sums
 	dh_builddeb
 
+binary-arch:
+# Nothing to do.
+
 binary: binary-indep binary-arch
 
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: build build-indep build-arch
+.PHONY: clean binary-indep binary-arch binary install
 

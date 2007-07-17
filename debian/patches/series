@@ -1,0 +1,2 @@
+01_pci_rom_header.patch -p0
+02_biossums_warning.patch -p0

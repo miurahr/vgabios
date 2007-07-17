@@ -1,3 +1,19 @@
+vgabios (0.6a-2) unstable; urgency=low
+
+  * Add quilt support for patch management:
+    - Add 'quilt (>= 0.40) to Build-Depends.
+    - Include quilt.make from debian/rules.
+    - Add a debian/patches/series file.
+  * Add a PCI rom header. (Closes: #432766)
+    - debian/patches/01_pci_rom_header.patch: New file.
+    Thanks to Stefan Reinauer <stepan@coresystems.de>.
+  * Fix warning in biossums.c by including <string.h>.
+    - debian/patches/02_biossums_warning.patch: New file.
+  * Add build-indep and build-arch targets.
+  * Create the binary package on binary-indep instead of binary-arch.
+
+ -- Guillem Jover <guillem@debian.org>  Tue, 17 Jul 2007 06:11:15 +0300
+
 vgabios (0.6a-1) unstable; urgency=low
 
   * New upstream release.
