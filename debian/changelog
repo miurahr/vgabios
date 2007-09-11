@@ -1,10 +1,10 @@
-vgabios (0.6a-3) UNRELEASED; urgency=low
+vgabios (0.6a-3) unstable; urgency=low
 
   * Do not add linemarkers from gcc preprocessed output. (Closes: #441491)
     - debian/patches/03_no_linemarkers.patch: New file.
   * Add Vcs-Brwoser and Vcs-Git fields.
 
- -- Guillem Jover <guillem@debian.org>  Tue, 11 Sep 2007 05:16:29 +0300
+ -- Guillem Jover <guillem@debian.org>  Tue, 11 Sep 2007 05:28:35 +0300
 
 vgabios (0.6a-2) unstable; urgency=low
 
