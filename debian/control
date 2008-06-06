@@ -2,6 +2,7 @@ Source: vgabios
 Section: misc
 Priority: extra
 Maintainer: Guillem Jover <guillem@debian.org>
+Homepage: http://savannah.nongnu.org/projects/vgabios/
 Vcs-Browser: http://git.debian.org/?p=users/guillem/pkg-vgabios.git
 Vcs-Git: git://git.debian.org/~guillem/pkg-vgabios.git
 Build-Depends: debhelper (>= 5), quilt (>= 0.40)
