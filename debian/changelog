@@ -10,6 +10,7 @@ vgabios (0.6b-1) UNRELEASED; urgency=low
     - Rename Acknoledgements to Copyright Holders.
     - List all copyright holders, with copyright sign and years.
     - Add more upstream authors.
+    - Update upstream download url.
   * Add a README.source.
   * Add a Homepage field.
   * Now using Standards-Version 3.8.0.
