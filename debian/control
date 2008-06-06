@@ -6,7 +6,7 @@ Vcs-Browser: http://git.debian.org/?p=users/guillem/pkg-vgabios.git
 Vcs-Git: git://git.debian.org/~guillem/pkg-vgabios.git
 Build-Depends: debhelper (>= 5), quilt (>= 0.40)
 Build-Depends-Indep: bcc, bin86, gawk | awk
-Standards-Version: 3.7.2
+Standards-Version: 3.8.0
 
 Package: vgabios
 Architecture: all
