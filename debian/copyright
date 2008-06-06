@@ -5,17 +5,20 @@ Now maintained by Guillem Jover <guillem@debian.org>.
 
 It was downloaded from <http://www.nongnu.org/vgabios/>
 
-Copyright:
-
 Upstream Authors:
 
     Christophe Bothamy <cbothamy@free.fr>
+    Jeroen Janssen <jeroen.janssen@gmail.com>
+    Kevin Lawton <kevin2001@yahoo.com>
+    Volker Ruppert <info@vruppert.de>
     and others
 
-Acknowledgements:
+Copyright Holders:
 
-    Code from rombios.c of plex86 (c) by Kevin Lawton
-    Fonts from fntcol16.zip (c) by Joseph Gil
+    Copyright © 2001-2003 Christophe Bothamy
+    Copyright © 2002 Jeroen Janssen
+    Copyright © 2002 Kevin Lawton
+    Copyright © 2002-2003, 2005-2006, 2008 Volker Ruppert
 
 License:
 
