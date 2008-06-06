@@ -1,3 +1,12 @@
+vgabios (0.6b-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+    - debian/patches/01_pci_rom_header.patch: Remove, fixed upstream.
+    - debian/patches/02_biossums_warning.patch: Likewise.
+    - debian/patches/03_no_linemarkers.patch: Likewise.
+
+ -- Guillem Jover <guillem@debian.org>  Fri, 06 Jun 2008 04:23:45 +0300
+
 vgabios (0.6a-3) unstable; urgency=low
 
   * Do not add linemarkers from gcc preprocessed output. (Closes: #441491)
