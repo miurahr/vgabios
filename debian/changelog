@@ -4,6 +4,8 @@ vgabios (0.6b-1) UNRELEASED; urgency=low
     - debian/patches/01_pci_rom_header.patch: Remove, fixed upstream.
     - debian/patches/02_biossums_warning.patch: Likewise.
     - debian/patches/03_no_linemarkers.patch: Likewise.
+  * The offending patches using the quilt series -p0 specific feature are
+    no longer in the package. (Closes: #485361)
   * Update debian/watch file to new savannah url.
   * Improve debian/copyright:
     - Remove empty Copyright section.
