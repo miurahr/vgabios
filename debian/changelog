@@ -9,7 +9,7 @@ vgabios (0.6b-1) unstable; urgency=low
   * Update debian/watch file to new savannah url.
   * Improve debian/copyright:
     - Remove empty Copyright section.
-    - Rename Acknoledgements to Copyright Holders.
+    - Rename Acknowledgements to Copyright Holders.
     - List all copyright holders, with copyright sign and years.
     - Add more upstream authors.
     - Update upstream download url.
@@ -18,7 +18,7 @@ vgabios (0.6b-1) unstable; urgency=low
   * Update packaging VCS fields to the new url.
   * Now using Standards-Version 3.8.0.
   * Add support for widescreen modes, stolen from KVM. (Closes: #458477)
-    - debian/patches/widescreen_modes_stolen_from_kvm.patch: Nerw file.
+    - debian/patches/widescreen_modes_stolen_from_kvm.patch: New file.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 15 Jun 2008 07:56:46 +0300
 
