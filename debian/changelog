@@ -1,4 +1,4 @@
-vgabios (0.6b-1) UNRELEASED; urgency=low
+vgabios (0.6b-1) unstable; urgency=low
 
   * New upstream release.
     - debian/patches/01_pci_rom_header.patch: Remove, fixed upstream.
@@ -20,7 +20,7 @@ vgabios (0.6b-1) UNRELEASED; urgency=low
   * Add support for widescreen modes, stolen from KVM. (Closes: #458477)
     - debian/patches/widescreen_modes_stolen_from_kvm.patch: Nerw file.
 
- -- Guillem Jover <guillem@debian.org>  Fri, 06 Jun 2008 04:23:45 +0300
+ -- Guillem Jover <guillem@debian.org>  Sun, 15 Jun 2008 07:56:46 +0300
 
 vgabios (0.6a-3) unstable; urgency=low
 
