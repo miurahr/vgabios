@@ -13,6 +13,7 @@ vgabios (0.6b-1) UNRELEASED; urgency=low
     - Update upstream download url.
   * Add a README.source.
   * Add a Homepage field.
+  * Update packaging VCS fields to the new url.
   * Now using Standards-Version 3.8.0.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 06 Jun 2008 04:23:45 +0300
