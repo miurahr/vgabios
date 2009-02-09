@@ -1,6 +1,7 @@
 vgabios (0.6b-2) UNRELEASED; urgency=low
 
   * Refer to LGPL-2.1 from common-licenses instead of just LGPL.
+  * Switch to debhelper compatibility level 7.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 22 Jun 2008 04:06:53 +0300
 
