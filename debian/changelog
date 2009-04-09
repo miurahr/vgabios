@@ -6,6 +6,7 @@ vgabios (0.6c-1) UNRELEASED; urgency=low
   * Refer to LGPL-2.1 from common-licenses instead of just LGPL.
   * Switch to debhelper compatibility level 7.
   * Use dh_prep instead of “dh_clean -k”.
+  * Now using Standards-Version 3.8.1 (no changes needed).
 
  -- Guillem Jover <guillem@debian.org>  Sun, 22 Jun 2008 04:06:53 +0300
 

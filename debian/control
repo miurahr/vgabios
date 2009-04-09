@@ -7,7 +7,7 @@ Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/vgabios.git
 Vcs-Git: git://git.hadrons.org/git/debian/pkgs/vgabios.git
 Build-Depends: debhelper (>= 7), quilt (>= 0.40)
 Build-Depends-Indep: bcc, bin86, gawk | awk
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 
 Package: vgabios
 Architecture: all
