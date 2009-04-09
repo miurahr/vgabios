@@ -1,5 +1,8 @@
-vgabios (0.6b-2) UNRELEASED; urgency=low
+vgabios (0.6c-1) UNRELEASED; urgency=low
 
+  * New upstream release. (Closes: #523303)
+    - debian/patches/widescreen_modes_stolen_from_kvm.patch: Remove, fixed
+    upstream.
   * Refer to LGPL-2.1 from common-licenses instead of just LGPL.
   * Switch to debhelper compatibility level 7.
   * Use dh_prep instead of “dh_clean -k”.
