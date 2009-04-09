@@ -1,4 +1,4 @@
-vgabios (0.6c-1) UNRELEASED; urgency=low
+vgabios (0.6c-1) unstable; urgency=low
 
   * New upstream release. (Closes: #523303)
     - debian/patches/widescreen_modes_stolen_from_kvm.patch: Remove, fixed
@@ -8,7 +8,7 @@ vgabios (0.6c-1) UNRELEASED; urgency=low
   * Use dh_prep instead of “dh_clean -k”.
   * Now using Standards-Version 3.8.1 (no changes needed).
 
- -- Guillem Jover <guillem@debian.org>  Sun, 22 Jun 2008 04:06:53 +0300
+ -- Guillem Jover <guillem@debian.org>  Thu, 09 Apr 2009 16:24:25 +0200
 
 vgabios (0.6b-1) unstable; urgency=low
 
