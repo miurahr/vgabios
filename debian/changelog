@@ -1,3 +1,9 @@
+vgabios (0.6c-3) UNRELEASED; urgency=low
+
+  * Now using Standards-Version 3.9.1 (no changes needed).
+
+ -- Guillem Jover <guillem@debian.org>  Sun, 27 Feb 2011 03:14:37 +0100
+
 vgabios (0.6c-2) unstable; urgency=low
 
   * Switch to source format “3.0 (quilt)”:
