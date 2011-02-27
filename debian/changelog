@@ -1,4 +1,4 @@
-vgabios (0.6c-3) UNRELEASED; urgency=low
+vgabios (0.6c-3) unstable; urgency=low
 
   [ Guillem Jover ]
   * Now using Standards-Version 3.9.1 (no changes needed).
@@ -24,7 +24,7 @@ vgabios (0.6c-3) UNRELEASED; urgency=low
       + debian/patches/06-Add-qemu-qxl-vga-pci-bios: New file.
   * Install the new binaries in debian/rules.
 
- -- Guillem Jover <guillem@debian.org>  Sun, 27 Feb 2011 03:14:37 +0100
+ -- Guillem Jover <guillem@debian.org>  Sun, 27 Feb 2011 03:44:20 +0100
 
 vgabios (0.6c-2) unstable; urgency=low
 
