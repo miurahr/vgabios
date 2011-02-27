@@ -1,6 +1,7 @@
 vgabios (0.6c-3) UNRELEASED; urgency=low
 
   * Now using Standards-Version 3.9.1 (no changes needed).
+  * Add missing ${misc:Depends} to vgabios Depends field.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 27 Feb 2011 03:14:37 +0100
 

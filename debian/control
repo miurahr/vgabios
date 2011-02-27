@@ -11,6 +11,7 @@ Standards-Version: 3.9.1
 
 Package: vgabios
 Architecture: all
+Depends: ${misc:Depends}
 Conflicts: bochs (<< 2.1.1+20040903-1)
 Description: VGA BIOS software for the Bochs and Qemu emulated VGA card
  The goal of this project is to provide a Video BIOS for Bochs and Qemu.
