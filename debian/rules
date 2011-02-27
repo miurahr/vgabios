@@ -56,4 +56,3 @@ binary: binary-indep binary-arch
 
 .PHONY: build build-indep build-arch
 .PHONY: clean binary-indep binary-arch binary install
-

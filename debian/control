@@ -19,4 +19,3 @@ Description: VGA BIOS software for the Bochs and Qemu emulated VGA card
  .
  WARNING: It is NOT meant to drive a physical vga card. You will probably
  fry it if you try. You have been warned.
-
