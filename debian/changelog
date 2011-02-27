@@ -1,7 +1,28 @@
 vgabios (0.6c-3) UNRELEASED; urgency=low
 
+  [ Guillem Jover ]
   * Now using Standards-Version 3.9.1 (no changes needed).
   * Add missing ${misc:Depends} to vgabios Depends field.
+
+  [ Jonathan Nieder ]
+  * Add support for additional PCI BIOS, by using proper PCI IDs.
+    Patches taken from the QEMU tree by Gerd Hoffman: (Closes: #614200)
+    - Makefile: factor out a single rule to build BIOS binaries, using
+      variables to account for their differences.
+      + debian/patches/01-Makefile-cleanup: New file.
+    - Allow PCI vendor and device IDs to be set for each BIOS binary.
+      + debian/patches/02-Add-defines-for-PCI-IDs: New file.
+    - Introduce vgabios-stdvga.bin, for QEMU's standard VGA card (1234:1111).
+      + debian/patches/03-Add-qemu-stdvga-bios: New file.
+    - Make pci_get_lfb_addr check PCI region 1 in addition to region zero,
+      so it can be used for the VmWare SVGA-II compatible adapter.
+      + debian/patches/04-update-pci_get_lfb_addr-for...: New file.
+    - Introduce vgabios-vmware.bin, for the VmWare SVGA-II card (15ad:0405).
+      + debian/patches/05-Add-qemu-vmware-vga-pci-bios: New file.
+    - Introduce vgabios-qxl.bin, for QEMU's QXL paravirtual graphics card
+      (1b36:0100).
+      + debian/patches/06-Add-qemu-qxl-vga-pci-bios: New file.
+  * Install the new binaries in debian/rules.
 
  -- Guillem Jover <guillem@debian.org>  Sun, 27 Feb 2011 03:14:37 +0100
 

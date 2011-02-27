@@ -27,9 +27,12 @@ install: build-indep
 	dh_prep
 	dh_installdirs
 	
-	for i in "" .debug .cirrus .cirrus.debug ; do \
-		install -m644 $(CURDIR)/VGABIOS-lgpl-latest$$i.bin \
-		debian/vgabios/usr/share/vgabios/vgabios$$i.bin ; \
+	set -e; \
+	for i in "" .cirrus .qxl .stdvga .vmware; do \
+		for j in "$$i" "$$i.debug"; do \
+			install -m644 $(CURDIR)/VGABIOS-lgpl-latest$$j.bin \
+			debian/vgabios/usr/share/vgabios/vgabios$$j.bin ; \
+		done; \
 	done
 
 binary-indep: install
