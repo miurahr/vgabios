@@ -7,6 +7,8 @@ vgabios (0.7a-1) UNRELEASED; urgency=low
     - debian/patches/04-update-pci_get_lfb_addr-for-vmware-vga: Likewise.
     - debian/patches/05-Add-qemu-vmware-vga-pci-bios: Refreshed.
     - debian/patches/06-Add-qemu-qxl-vga-pci-bios: Likewise.
+  * Add compatibility symlinks from stdvga vgabios to the default vgabios
+    ROM, as the latter is now exactly the same as the former.
 
  -- Guillem Jover <guillem@debian.org>  Mon, 31 Oct 2011 21:52:52 +0100
 
