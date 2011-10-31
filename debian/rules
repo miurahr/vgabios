@@ -21,6 +21,8 @@ build-arch:
 
 build: build-indep build-arch
 
+BIOSDIR := debian/vgabios/usr/share/vgabios/
+
 install: build-indep
 	dh_testdir
 	dh_testroot
@@ -31,7 +33,7 @@ install: build-indep
 	for i in "" .cirrus .qxl .stdvga .vmware; do \
 		for j in "$$i" "$$i.debug"; do \
 			install -m644 $(CURDIR)/VGABIOS-lgpl-latest$$j.bin \
-			debian/vgabios/usr/share/vgabios/vgabios$$j.bin ; \
+			              $(BIOSDIR)/vgabios$$j.bin ; \
 		done; \
 	done
 
