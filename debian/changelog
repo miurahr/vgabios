@@ -1,4 +1,4 @@
-vgabios (0.7a-1) UNRELEASED; urgency=low
+vgabios (0.7a-1) unstable; urgency=low
 
   * New upstream release.
     - debian/patches/01-Makefile-cleanup: Remove, merged upstream.
@@ -11,7 +11,7 @@ vgabios (0.7a-1) UNRELEASED; urgency=low
     ROM, as the latter is now exactly the same as the former.
   * Now using Standards-Version 3.9.2 (no changes needed).
 
- -- Guillem Jover <guillem@debian.org>  Mon, 31 Oct 2011 21:52:52 +0100
+ -- Guillem Jover <guillem@debian.org>  Tue, 01 Nov 2011 00:57:42 +0100
 
 vgabios (0.6c-3) unstable; urgency=low
 
