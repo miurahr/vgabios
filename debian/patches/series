@@ -1,6 +1,2 @@
-01-Makefile-cleanup
-02-Add-defines-for-PCI-IDs
-03-Add-qemu-stdvga-pci-bios
-04-update-pci_get_lfb_addr-for-vmware-vga
 05-Add-qemu-vmware-vga-pci-bios
 06-Add-qemu-qxl-vga-pci-bios
