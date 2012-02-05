@@ -1,7 +1,7 @@
 Source: vgabios
 Section: misc
 Priority: extra
-Maintainer: Guillem Jover <guillem@debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Homepage: http://savannah.nongnu.org/projects/vgabios/
 Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/vgabios.git
 Vcs-Git: git://git.hadrons.org/git/debian/pkgs/vgabios.git
