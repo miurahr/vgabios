@@ -1,10 +1,10 @@
 Source: vgabios
 Section: misc
 Priority: extra
-Maintainer: Debian QA Group <packages@qa.debian.org>
+Maintainer: Debian QEMU Team <pkg-qemu-devel@lists.alioth.debian.org>
 Homepage: http://savannah.nongnu.org/projects/vgabios/
-Vcs-Browser: http://git.hadrons.org/?p=debian/pkgs/vgabios.git
-Vcs-Git: git://git.hadrons.org/git/debian/pkgs/vgabios.git
+Vcs-Browser: http://git.debian.org/?p=pkg-qemu/vgabios.git
+Vcs-Git: git://git.debian.org/?p=pkg-qemu/vgabios.git
 Build-Depends: debhelper (>= 7)
 Build-Depends-Indep: bcc, bin86, gawk | awk
 Standards-Version: 3.9.2

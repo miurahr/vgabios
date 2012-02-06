@@ -1,3 +1,12 @@
+vgabios (0.7a-3) UNRELEASED; urgency=low
+
+  * Adopt the package under qemu-pkg umbrella (Closes: #658776)
+    Thank you Guillem for maintaining it so far
+  * Move package git repository to git.debian.org
+  * Update VCS links accordingly
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Mon, 06 Feb 2012 14:50:58 +0400
+
 vgabios (0.7a-2) unstable; urgency=low
 
   * Orphan package, set maintainer to Debian QA Group.
