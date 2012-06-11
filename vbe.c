@@ -1463,100 +1463,113 @@ ASM_END
 /* Virtual monitor EDID information */
 ASM_START
 vesa_EDID:
-  db 0x00,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x00          /* 0x0000 8-byte header */
-  db 0x04,0x21                                        /* 0x0008 Vendor
-ID ("AAA") */
-  db 0xAB,0xCD                                        /* 0x000A Product ID */
-  db 0x00,0x00,0x00,0x00                              /* 0x000C Serial number (none) */
-  db 54, 10                                           /* 0x0010 Week of manufactur (54) and year of manufacture (2000) */
-  db 0x01, 0x01                                       /* 0x0012 EDID version number (1.1) */
-  db 0x0F                                             /* 0x0014 Video signal interface (analogue, 0.700 : 0.300 : 1.000 V p-p,
-                                                                Video Setup: Blank Level = Black Level, Separate Sync H & V Signals are
-                                                                supported, Composite Sync Signal on Horizontal is supported, Composite 
-                                                                Sync Signal on Green Video is supported, Serration on the Vertical Sync
-                                                                is supported) */
-  db 0x21,0x19                                        /* 0x0015 Scren size (330 mm * 250 mm) */
-  db 0x78                                             /* 0x0017 Display gamma (2.2) */
-  db 0x0D                                             /* 0x0018 Feature flags (no DMPS states, RGB, display is continuous frequency) */
-  db 0x78,0xF5                                        /* 0x0019 Least significant bits for chromaticity and default white point */
-  db 0xA6,0x55,0x48,0x9B,0x26,0x12,0x50,0x54          /* 0x001B Most significant bits for chromaticity and default white point */
-  db 0xFF                                             /* 0x0023 Established timings 1 (720 x 400 @ 70Hz, 720 x 400 @ 88Hz,
-                                                                  640 x 480 @ 60Hz, 640 x 480 @ 67Hz, 640 x 480 @ 72Hz, 640 x 480 @ 75Hz,
-                                                                  800 x 600 @ 56Hz, 800 x 600 @ 60Hz) */
-  db 0xEF                                             /* 0x0024 Established timings 2 (800 x 600 @ 72Hz, 800 x 600 @ 75Hz, 832 x 624 @ 75Hz
-                                                                  not 1024 x 768 @ 87Hz(I), 1024 x 768 @ 60Hz, 1024 x 768 @ 70Hz,
-                                                                  1024 x 768 @ 75Hz, 1280 x 1024 @ 75Hz) */
-  db 0x80                                             /* 0x002  Established timings 2 (1152 x 870 @ 75Hz and no manufacturer timings) */
-  db 0x31, 0x59                                       /* 0x0026 Standard timing #1 (640 x 480 @ 85 Hz) */
-  db 0x45, 0x59                                       /* 0x0028 Standard timing #2 (800 x 600 @ 85 Hz) */
-  db 0x61, 0x59                                       /* 0x002A Standard timing #3 (1024 x 768 @ 85 Hz) */
-  db 0x31, 0x4A                                       /* 0x002C Standard timing #4 (640 x 480 @ 70 Hz) */
-  db 0x81, 0x4A                                       /* 0x002E Standard timing #5 (1280 x 960 @ 70 Hz) */
-  db 0xA9, 0x40                                       /* 0x0030 Standard timing #6 (1600 x 1200 @ 60 Hz) */
-  db 0x01, 0x01                                       /* 0x0032 Standard timing #7 (unused) */
-  db 0x01, 0x01                                       /* 0x0034 Standard timing #8 (unused) */
-                                                      /* 0x0036 First 18-byte descriptor (1152 x 864) */
-  db 0x30, 0x2a                                       /* Pixel clock = 108000000 Hz */
-  db 0x80                                             /* Horizontal addressable pixels low byte (0x0480 & 0xFF) */
-  db 0xC0                                             /* Horizontal blanking low byte (0x01C0 & 0xFF) */
-  db 0x41                                             /* Horizontal addressable pixels high 4 bits (0x0480 >> 8), and */
-                                                      /* Horizontal blanking high 4 bits (0x01C0 >> 8) */
-  db 0x60                                             /* Vertical addressable pixels low byte (0x0360 & 0xFF) */
-  db 0x24                                             /* Vertical blanking low byte (0x0024 & 0xFF) */
-  db 0x30                                             /* Vertical addressable pixels high 4 bits (0x0360 >> 8), and */
-                                                      /* Vertical blanking high 4 bits (0x0024 >> 8) */
-  db 0x40                                             /* Horizontal front porch in pixels low byte (0x0040 & 0xFF) */
-  db 0x80                                             /* Horizontal sync pulse width in pixels low byte (0x0080 & 0xFF) */
-  db 0x13                                             /* Vertical front porch in lines low 4 bits (0x0001 & 0x0F), and */
-                                                      /* Vertical sync pulse width in lines low 4 bits (0x0003 & 0x0F) */
-  db 0x00                                             /* Horizontal front porch pixels high 2 bits (0x0040 >> 8), and */
-                                                      /* Horizontal sync pulse width in pixels high 2 bits (0x0080 >> 8), and */
-                                                      /* Vertical front porch in lines high 2 bits (0x0001 >> 4), and */
-                                                      /* Vertical sync pulse width in lines high 2 bits (0x0003 >> 4) */
-  db 0x2C                                             /* Horizontal addressable video image size in mm low 8 bits (0x012C & 0xFF) */
-  db 0xE1                                             /* Vertical addressable video image size in mm low 8 bits (0x00E1 & 0xFF) */
-  db 0x10                                             /* Horizontal addressable video image size in mm low 8 bits (0x012C >> 8), and */
-                                                      /* Vertical addressable video image size in mm low 8 bits (0x00E1 >> 8) */
-  db 0x00                                             /*          Left and right border size in pixels (0x00) */
-  db 0x00                                             /*          Top and bottom border size in lines (0x00) */
-  db 0x1E                                             /* Flags (non-interlaced, no stereo, analog composite sync, sync on */
-                                                      /* all three (RGB) video signals) */
-                                                      /* 0x0048 Second 18-byte descriptor (1280 x 1024) */
-  db 0x30, 0x2a                                       /* Pixel clock = 108000000 Hz */
-  db 0x00                                             /* Horizontal addressable pixels low byte (0x0500 & 0xFF) */
-  db 0x98                                             /* Horizontal blanking low byte (0x0198 & 0xFF) */
-  db 0x51                                             /* Horizontal addressable pixels high 4 bits (0x0500 >> 8), and */
-                                                      /* Horizontal blanking high 4 bits (0x0198 >> 8) */
-  db 0x00                                             /* Vertical addressable pixels low byte (0x0400 & 0xFF) */
-  db 0x2A                                             /* Vertical blanking low byte (0x002A & 0xFF) */
-  db 0x40                                             /* Vertical addressable pixels high 4 bits (0x0400 >> 8), and */
-                                                      /* Vertical blanking high 4 bits (0x002A >> 8) */
-  db 0x30                                             /* Horizontal front porch in pixels low byte (0x0030 & 0xFF) */
-  db 0x70                                             /* Horizontal sync pulse width in pixels low byte (0x0070 & 0xFF) */
-  db 0x13                                             /* Vertical front porch in lines low 4 bits (0x0001 & 0x0F), and */
-                                                      /* Vertical sync pulse width in lines low 4 bits (0x0003 & 0x0F) */
-  db 0x00                                             /* Horizontal front porch pixels high 2 bits (0x0030 >> 8), and */
-                                                      /* Horizontal sync pulse width in pixels high 2 bits (0x0070 >> 8), and */
-                                                      /* Vertical front porch in lines high 2 bits (0x0001 >> 4), and */
-                                                      /* Vertical sync pulse width in lines high 2 bits (0x0003 >> 4) */
-  db 0x2C                                             /* Horizontal addressable video image size in mm low 8 bits (0x012C & 0xFF) */
-  db 0xE1                                             /* Vertical addressable video image size in mm low 8 bits (0x00E1 & 0xFF) */
-  db 0x10                                             /* Horizontal addressable video image size in mm low 8 bits (0x012C >> 8), and */
-                                                      /* Vertical addressable video image size in mm low 8 bits (0x00E1 >> 8) */
-  db 0x00                                             /*          Left and right border size in pixels (0x00) */
-  db 0x00                                             /*          Top and bottom border size in lines (0x00) */
-  db 0x1E                                             /* Flags (non-interlaced, no stereo, analog composite sync, sync on */
-                                                      /* all three (RGB) video signals) */
-  db 0x00,0x00,0x00,0xFF,0x00                         /* 0x005A Third 18-byte descriptor - display product serial number */
+  db 0x00,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x00
+                                      /* 0x0000 8-byte header */
+  db 0x04,0x21                        /* 0x0008 Vendor ID ("AAA") */
+  db 0xAB,0xCD                        /* 0x000A Product ID */
+  db 0x00,0x00,0x00,0x00              /* 0x000C Serial number (none) */
+  db 54, 10                           /* 0x0010 Week of manufactur (54) and year of manufacture (2000) */
+  db 0x01, 0x03                       /* 0x0012 EDID version number (1.3) */
+  db 0x0F                             /* 0x0014 Video signal interface (analogue, 0.700 : 0.300 : 1.000 V p-p,
+                                                Video Setup: Blank Level = Black Level, Separate Sync H & V Signals are
+                                                supported, Composite Sync Signal on Horizontal is supported, Composite 
+                                                Sync Signal on Green Video is supported, Serration on the Vertical Sync
+                                                is supported) */
+  db 0x21,0x19                        /* 0x0015 Scren size (330 mm * 250 mm) */
+  db 0x78                             /* 0x0017 Display gamma (2.2) */
+  db 0x0D                             /* 0x0018 Feature flags (no DMPS states, RGB, display is continuous frequency) */
+  db 0x78,0xF5                        /* 0x0019 Least significant bits for chromaticity and default white point */
+  db 0xA6,0x55,0x48,0x9B,0x26,0x12,0x50,0x54
+                                      /* 0x001B Most significant bits for chromaticity and default white point */
+
+  db 0xFF                             /* 0x0023 Established timings 1 (720 x 400 @ 70Hz, 720 x 400 @ 88Hz,
+                                                   640 x 480 @ 60Hz, 640 x 480 @ 67Hz, 640 x 480 @ 72Hz, 640 x 480 @ 75Hz,
+                                                   800 x 600 @ 56Hz, 800 x 600 @ 60Hz) */
+  db 0xEF                             /* 0x0024 Established timings 2 (800 x 600 @ 72Hz, 800 x 600 @ 75Hz, 832 x 624 @ 75Hz
+                                                   not 1024 x 768 @ 87Hz(I), 1024 x 768 @ 60Hz, 1024 x 768 @ 70Hz,
+                                                   1024 x 768 @ 75Hz, 1280 x 1024 @ 75Hz) */
+  db 0x80                             /* 0x0025 Established timings 2 (1152 x 870 @ 75Hz and no manufacturer timings) */
+
+                                      /* Standard timing */
+                                      /* First byte: X resolution, divided by 8, less 31 (256–2288 pixels) */
+                                      /* bit 7-6, X:Y pixel ratio: 00=16:10; 01=4:3; 10=5:4; 11=16:9 */
+                                      /* bit 5-0, Vertical frequency, less 60 (60–123 Hz), nop 01 01 */
+  db 0x31, 0x59                       /* 0x0026 Standard timing #1 (640 x 480 @ 85 Hz) */
+  db 0x45, 0x59                       /* 0x0028 Standard timing #2 (800 x 600 @ 85 Hz) */
+  db 0x61, 0x59                       /* 0x002A Standard timing #3 (1024 x 768 @ 85 Hz) */
+  db 0x31, 0x4A                       /* 0x002C Standard timing #4 (640 x 480 @ 70 Hz) */
+  db 0x81, 0x4A                       /* 0x002E Standard timing #5 (1280 x 960 @ 70 Hz) */
+  db 0xA9, 0x40                       /* 0x0030 Standard timing #6 (1600 x 1200 @ 60 Hz) */
+  db 0x8B, 0xCA                       /* 0x0034 Standard timing #7 (1360 x 768 @ 70 Hz) */
+  db 0x01, 0x01                       /* 0x0032 Standard timing #8 (none) */
+
+
+                                      /* 0x0036 First 18-byte descriptor (1152 x 864) */
+  db 0x30, 0x2a                       /*        Pixel clock = 108000000 Hz */
+  db 0x80                             /* 0x0038 Horizontal addressable pixels low byte (0x0480 & 0xFF) */
+  db 0xC0                             /* 0x0039 Horizontal blanking low byte (0x01C0 & 0xFF) */
+  db 0x41                             /* 0x003A Horizontal addressable pixels high 4 bits ((0x0480 & 0x0F00) >> 4), and */
+                                      /*        Horizontal blanking high 4 bits ((0x01C0 & 0x0F00 ) >> 8) as low bits */
+  db 0x60                             /* 0x003B Vertical addressable pixels low byte (0x0360 & 0xFF) */
+  db 0x24                             /* 0x003C Vertical blanking low byte (0x0024 & 0xFF) */
+  db 0x30                             /* 0x003D Vertical addressable pixels high 4 bits ((0x0360 & 0x0F00) >> 4), and */
+                                      /*        Vertical blanking high 4 bits ((0x0024 & x0F00) >> 8) */
+  db 0x40                             /* 0x003E Horizontal front porch in pixels low byte (0x0040 & 0xFF) */
+  db 0x80                             /* 0x003F Horizontal sync pulse width in pixels low byte (0x0080 & 0xFF) */
+  db 0x13                             /* 0x0040 Vertical front porch in lines low 4 bits ((0x0001 & 0x0F) << 4), and */
+                                      /*        Vertical sync pulse width in lines low 4 bits (0x0003 & 0x0F) */
+  db 0x00                             /* 0x0041 Horizontal front porch pixels high 2 bits (0x0040 >> 8), and */
+                                      /*        Horizontal sync pulse width in pixels high 2 bits (0x0080 >> 8), and */
+                                      /*        Vertical front porch in lines high 2 bits (0x0001 >> 4), and */
+                                      /*        Vertical sync pulse width in lines high 2 bits (0x0003 >> 4) */
+  db 0x2C                             /* 0x0042 Horizontal addressable video image size in mm low 8 bits (0x012C & 0xFF) */
+  db 0xE1                             /* 0x0043 Vertical addressable video image size in mm low 8 bits (0x00E1 & 0xFF) */
+  db 0x10                             /* 0x0044 Horizontal addressable video image size in mm low 8 bits (0x012C >> 8), and */
+                                      /*        Vertical addressable video image size in mm low 8 bits (0x00E1 >> 8) */
+  db 0x00                             /* 0x0045 Left and right border size in pixels (0x00) */
+  db 0x00                             /* 0x0046 Top and bottom border size in lines (0x00) */
+  db 0x1E                             /* 0x0047 Flags (non-interlaced, no stereo, analog composite sync, sync on */
+                                      /*        all three (RGB) video signals) */
+
+
+                                      /* 0x0048 Second 18-byte descriptor (1280 x 1024) */
+  db 0x30, 0x2a                       /*        Pixel clock = 108000000 Hz */
+  db 0x00                             /* 0x004A Horizontal addressable pixels low byte (0x0500 & 0xFF) */
+  db 0x98                             /* 0x004B Horizontal blanking low byte (0x0198 & 0xFF) */
+  db 0x51                             /* 0x004C Horizontal addressable pixels high 4 bits (0x0500 >> 8), and */
+                                      /*        Horizontal blanking high 4 bits (0x0198 >> 8) */
+  db 0x00                             /* 0x004D Vertical addressable pixels low byte (0x0400 & 0xFF) */
+  db 0x2A                             /* 0x004E Vertical blanking low byte (0x002A & 0xFF) */
+  db 0x40                             /* 0x004F Vertical addressable pixels high 4 bits (0x0400 >> 8), and */
+                                      /*        Vertical blanking high 4 bits (0x002A >> 8) */
+  db 0x30                             /* 0x0050 Horizontal front porch in pixels low byte (0x0030 & 0xFF) */
+  db 0x70                             /* 0x0051 Horizontal sync pulse width in pixels low byte (0x0070 & 0xFF) */
+  db 0x13                             /* 0x0052 Vertical front porch in lines low 4 bits (0x0001 & 0x0F), and */
+                                      /*        Vertical sync pulse width in lines low 4 bits (0x0003 & 0x0F) */
+  db 0x00                             /* 0x0053 Horizontal front porch pixels high 2 bits (0x0030 >> 8), and */
+                                      /*        Horizontal sync pulse width in pixels high 2 bits (0x0070 >> 8), and */
+                                      /*        Vertical front porch in lines high 2 bits (0x0001 >> 4), and */
+                                      /*        Vertical sync pulse width in lines high 2 bits (0x0003 >> 4) */
+  db 0x2C                             /* 0x0054 Horizontal addressable video image size in mm low 8 bits (0x012C & 0xFF) */
+  db 0xE1                             /* 0x0055 Vertical addressable video image size in mm low 8 bits (0x00E1 & 0xFF) */
+  db 0x10                             /* 0x0056 Horizontal addressable video image size in mm low 8 bits (0x012C >> 8), and */
+                                      /*        Vertical addressable video image size in mm low 8 bits (0x00E1 >> 8) */
+  db 0x00                             /* 0x0057 Left and right border size in pixels (0x00) */
+  db 0x00                             /* 0x0058 Top and bottom border size in lines (0x00) */
+  db 0x1E                             /* 0x0059 Flags (non-interlaced, no stereo, analog composite sync, sync on */
+                                      /*        all three (RGB) video signals) */
+
+
+  db 0x00,0x00,0x00,0xFF,0x00         /* 0x005A Third 18-byte descriptor - display product serial number */
   .ascii "0123456789"
   db 0x0A,0x20,0x20
 
-  db 0x00,0x00,0x00,0xFC,0x00                         /* 0x006C Fourth 18-byte descriptor - display product name  */
+  db 0x00,0x00,0x00,0xFC,0x00         /* 0x006C Fourth 18-byte descriptor - display product name  */
   .ascii "Bochs Screen"
   db 0x0A
 
-  db 0x00                                             /* 0x007E Extension block count (none)  */
-  db 0x00                                             /* 0x007F Checksum (ignored - recalculated when needed)  */
+  db 0x00                             /* 0x007E Extension block count (none)  */
+  db 0x00                             /* 0x007F Checksum (ignored - recalculated when needed)  */
 ASM_END 
 
 /** Function 15h - Display Identification Extensions

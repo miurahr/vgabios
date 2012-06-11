@@ -17,6 +17,7 @@ void vbe_biosfn_set_mode(AX, BX, ES, DI);
 void vbe_biosfn_save_restore_state(AX, CX, DX, ES, BX);
 void vbe_biosfn_set_get_palette_data(AX);
 void vbe_biosfn_return_protected_mode_interface(AX);
+void vbe_biosfn_display_identification_extensions(AX, BX, CX, DX, ES, DI);
 
 // The official VBE Information Block
 typedef struct VbeInfoBlock
