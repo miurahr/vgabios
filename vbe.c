@@ -1582,8 +1582,7 @@ ASM_END
  *           ES:DI =         Pointer to buffer to store EDID block (if BL = 01h)
  *
  * Output:   AX    =         Status
- *           BH    =         Approximate time to get EDID in seconds
-rounded up (if BL = 00h)
+ *           BH    =         Approximate time to get EDID in seconds rounded up (if BL = 00h)
  *           BL    =         DDC level supported: (if BL = 00h)
  *                            Bit    Meaning if set
  *                             0      DDC1 supported
