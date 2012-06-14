@@ -12,16 +12,16 @@ Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
 
 --- a/Makefile
 +++ b/Makefile
-@@ -14,7 +14,7 @@ RELVERS = `pwd | sed "s-.*/--" | sed "s/
+@@ -14,7 +14,7 @@
  
  VGABIOS_DATE = "-DVGABIOS_DATE=\"$(RELDATE)\""
  
--all: bios cirrus-bios vmware-bios
-+all: bios cirrus-bios vmware-bios qxl-bios
+-all: bios cirrus-bios hires-bios vmware-bios
++all: bios cirrus-bios hires-bios vmware-bios qxl-bios
  
  bios: vgabios.bin vgabios.debug.bin
  
-@@ -22,6 +22,8 @@ cirrus-bios: vgabios-cirrus.bin vgabios-
+@@ -24,6 +24,8 @@
  
  vmware-bios: vgabios-vmware.bin vgabios-vmware.debug.bin
  
@@ -30,8 +30,8 @@ Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
  clean:
  	/bin/rm -f  biossums vbetables-gen vbetables.h *.o *.s *.ld86 \
            temp.awk.* vgabios*.orig _vgabios_* _vgabios-debug_* core vgabios*.bin vgabios*.txt $(RELEASE).bin *.bak
-@@ -39,6 +41,8 @@ vgabios-cirrus.bin       : VGAFLAGS := -
- vgabios-cirrus.debug.bin : VGAFLAGS := -DCIRRUS -DPCIBIOS -DCIRRUS_DEBUG
+@@ -43,6 +45,8 @@
+ vgabios-hires.debug.bin  : VGAFLAGS := -DVBE -DPCIBIOS -DHIRES -DDEBUG
  vgabios-vmware.bin       : VGAFLAGS := -DVBE -DPCIBIOS -DPCI_VID=0x15ad -DPCI_DID=0x0405
  vgabios-vmware.debug.bin : VGAFLAGS := -DVBE -DPCIBIOS -DPCI_VID=0x15ad -DPCI_DID=0x0405 -DDEBUG
 +vgabios-qxl.bin          : VGAFLAGS := -DVBE -DPCIBIOS -DPCI_VID=0x1b36 -DPCI_DID=0x0100
@@ -39,8 +39,8 @@ Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
  
  # dist names
  vgabios.bin              : DISTNAME := VGABIOS-lgpl-latest.bin
-@@ -47,6 +51,8 @@ vgabios-cirrus.bin       : DISTNAME := V
- vgabios-cirrus.debug.bin : DISTNAME := VGABIOS-lgpl-latest.cirrus.debug.bin
+@@ -53,6 +57,8 @@
+ vgabios-hires.debug.bin  : DISTNAME := VGABIOS-lgpl-latest.hires.debug.bin
  vgabios-vmware.bin       : DISTNAME := VGABIOS-lgpl-latest.vmware.bin
  vgabios-vmware.debug.bin : DISTNAME := VGABIOS-lgpl-latest.vmware.debug.bin
 +vgabios-qxl.bin          : DISTNAME := VGABIOS-lgpl-latest.qxl.bin
@@ -48,8 +48,8 @@ Signed-off-by: Gerd Hoffmann <kraxel@redhat.com>
  
  # dependencies
  vgabios.bin              : $(VGA_FILES) $(VBE_FILES) biossums
-@@ -55,6 +61,8 @@ vgabios-cirrus.bin       : $(VGA_FILES)
- vgabios-cirrus.debug.bin : $(VGA_FILES) clext.c biossums
+@@ -63,6 +69,8 @@
+ vgabios-hires.debug.bin  : $(VGA_FILES) $(VBE_FILES) biossums
  vgabios-vmware.bin       : $(VGA_FILES) $(VBE_FILES) biossums
  vgabios-vmware.debug.bin : $(VGA_FILES) $(VBE_FILES) biossums
 +vgabios-qxl.bin          : $(VGA_FILES) $(VBE_FILES) biossums

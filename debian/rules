@@ -30,7 +30,7 @@ install: build-indep
 	dh_installdirs
 	
 	set -e; \
-	for i in "" .cirrus .qxl .vmware; do \
+	for i in "" .cirrus .hires .qxl .vmware; do \
 		for j in "$$i" "$$i.debug"; do \
 			install -m644 $(CURDIR)/VGABIOS-lgpl-latest$$j.bin \
 			              $(BIOSDIR)/vgabios$$j.bin ; \
