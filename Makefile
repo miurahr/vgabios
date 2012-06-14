@@ -14,11 +14,13 @@ RELVERS = `pwd | sed "s-.*/--" | sed "s/vgabios//" | sed "s/-//"`
 
 VGABIOS_DATE = "-DVGABIOS_DATE=\"$(RELDATE)\""
 
-all: bios cirrus-bios
+all: bios cirrus-bios hires-bios
 
 bios: vgabios.bin vgabios.debug.bin
 
 cirrus-bios: vgabios-cirrus.bin vgabios-cirrus.debug.bin
+
+hires-bios: vgabios-hires.bin vgabios-hires.debug.bin
 
 clean:
 	/bin/rm -f  biossums vbetables-gen vbetables.h *.o *.s *.ld86 \
@@ -35,18 +37,24 @@ vgabios.bin              : VGAFLAGS := -DVBE -DPCIBIOS
 vgabios.debug.bin        : VGAFLAGS := -DVBE -DPCIBIOS -DDEBUG
 vgabios-cirrus.bin       : VGAFLAGS := -DCIRRUS -DPCIBIOS
 vgabios-cirrus.debug.bin : VGAFLAGS := -DCIRRUS -DPCIBIOS -DCIRRUS_DEBUG
+vgabios-hires.bin        : VGAFLAGS := -DVBE -DPCIBIOS -DHIRES
+vgabios-hires.debug.bin  : VGAFLAGS := -DVBE -DPCIBIOS -DHIRES -DDEBUG
 
 # dist names
 vgabios.bin              : DISTNAME := VGABIOS-lgpl-latest.bin
 vgabios.debug.bin        : DISTNAME := VGABIOS-lgpl-latest.debug.bin
 vgabios-cirrus.bin       : DISTNAME := VGABIOS-lgpl-latest.cirrus.bin
 vgabios-cirrus.debug.bin : DISTNAME := VGABIOS-lgpl-latest.cirrus.debug.bin
+vgabios-hires.bin        : DISTNAME := VGABIOS-lgpl-latest.hires.bin
+vgabios-hires.debug.bin  : DISTNAME := VGABIOS-lgpl-latest.hires.debug.bin
 
 # dependencies
 vgabios.bin              : $(VGA_FILES) $(VBE_FILES) biossums
 vgabios.debug.bin        : $(VGA_FILES) $(VBE_FILES) biossums
 vgabios-cirrus.bin       : $(VGA_FILES) clext.c biossums
 vgabios-cirrus.debug.bin : $(VGA_FILES) clext.c biossums
+vgabios-hires.bin        : $(VGA_FILES) $(VBE_FILES) biossums
+vgabios-hires.debug.bin  : $(VGA_FILES) $(VBE_FILES) biossums
 
 # build rule
 %.bin:

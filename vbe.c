@@ -1497,12 +1497,19 @@ vesa_EDID:
   db 0x31, 0x59                       /* 0x0026 Standard timing #1 (640 x 480 @ 85 Hz) */
   db 0x45, 0x59                       /* 0x0028 Standard timing #2 (800 x 600 @ 85 Hz) */
   db 0x61, 0x59                       /* 0x002A Standard timing #3 (1024 x 768 @ 85 Hz) */
+#ifdef HIRES
   db 0x81, 0xCA                       /* 0x002C Standard timing #4 (1280 x 720 @ 70 Hz) */
   db 0x81, 0x4A                       /* 0x002E Standard timing #5 (1280 x 960 @ 60 Hz) */
   db 0x95, 0x00                       /* 0x0030 Standard timing #6 (1440 x 900 @ 60 Hz) */
   db 0xA9, 0x40                       /* 0x0034 Standard timing #7 (1600 x 1200 @ 60 Hz) */
   db 0xB3, 0x00                       /* 0x0032 Standard timing #8 (1680 x 1050 @ 60 Hz) */
-
+#else
+  db 0x31, 0x4A                       /* 0x002C Standard timing #4 (640 x 480 @ 70 Hz) */
+  db 0x01, 0x01                       /* 0x002E Standard timing #5 (unused) */
+  db 0x01, 0x01                       /* 0x0030 Standard timing #6 (unused) */
+  db 0x01, 0x01                       /* 0x0032 Standard timing #7 (unused) */
+  db 0x01, 0x01                       /* 0x0034 Standard timing #8 (unused) */
+#endif
 
                                       /* 0x0036 First 18-byte descriptor (1152 x 864) */
   db 0x30, 0x2a                       /*        Pixel clock = 108000000 Hz */
