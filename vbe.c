@@ -1496,7 +1496,7 @@ vesa_EDID:
                                       /* bit 7-6, X:Y pixel ratio: 00=16:10; 01=4:3; 10=5:4; 11=16:9 */
                                       /* bit 5-0, Vertical frequency, less 60 (60–123 Hz), nop 01 01 */
 #ifdef LOWRES
-  db 0x81, 0x9A                       /* 0x0026 Standard timing #1 (1280 x 1024 @ 70Hz) - prefereble*/
+  db 0x81, 0x9A                       /* 0x0026 Standard timing #1 (1280 x 1024 @ 70Hz) - preferable*/
   db 0x61, 0x59                       /* 0x0028 Standard timing #2 (1024 x 768 @ 85 Hz) */
   db 0x45, 0x59                       /* 0x002A Standard timing #3 (800 x 600 @ 85 Hz) */
   db 0x31, 0x4A                       /* 0x002C Standard timing #4 (640 x 480 @ 70 Hz) */
@@ -1532,7 +1532,7 @@ vesa_EDID:
   db 0x1E                             /* 0x0047 Flags (non-interlaced, no stereo, analog composite sync, sync on */
                                       /*        all three (RGB) video signals) */
 #else
-  db 0xD1, 0x00                       /* 0x0026 Standard timing #1 (1920 x 1200 @ 60 Hz) - prefereble*/
+  db 0xD1, 0x00                       /* 0x0026 Standard timing #1 (1920 x 1200 @ 60 Hz) - preferable*/
   db 0x61, 0x59                       /* 0x0028 Standard timing #2 (1024 x 768 @ 85 Hz) */
   db 0x45, 0x59                       /* 0x002A Standard timing #3 (800 x 600 @ 85 Hz) */
   db 0x81, 0xCA                       /* 0x002C Standard timing #4 (1280 x 720 @ 70 Hz) */
